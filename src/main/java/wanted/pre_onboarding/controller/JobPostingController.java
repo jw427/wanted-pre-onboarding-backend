@@ -61,6 +61,9 @@ public class JobPostingController {
         return new ResponseEntity<>(jobPostingDetailResponse, HttpStatus.OK);
     }
 
+    /**
+     * 채용공고 검색
+     */
     @GetMapping("/search")
     public ResponseEntity<List<JobPostingResponse>> searchJobPosting(@RequestParam String keyword) {
         List<JobPostingResponse> jobPostingResponseList = jobPostingService.searchJobPosting(keyword);

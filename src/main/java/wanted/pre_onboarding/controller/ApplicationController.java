@@ -15,6 +15,9 @@ public class ApplicationController {
 
     private final ApplicationService applicationService;
 
+    /**
+     * 채용공고 지원
+     */
     @PostMapping("")
     public void createApplication(@RequestBody ApplicationRequest request) {
         applicationService.createApplication(request.getUserId(), request.getJobPostingId());
