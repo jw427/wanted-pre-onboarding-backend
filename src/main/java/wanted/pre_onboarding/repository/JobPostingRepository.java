@@ -14,8 +14,8 @@ public interface JobPostingRepository extends JpaRepository<JobPosting, Integer>
     Optional<JobPosting> findJobPostingById(Integer id);
 
     @Query("SELECT j FROM JobPosting j " +
-            "WHERE j.skill LIKE :keyword OR j.company.name LIKE :keyword OR j.nation LIKE :keyword OR j.region LIKE :keyword " +
-            "OR j.position LIKE :keyword OR CAST(j.reward AS string) LIKE :keyword OR j.skill LIKE :keyword")
+            "WHERE j.skill LIKE :keyword OR j.company.name LIKE :keyword OR j.nation LIKE :keyword " +
+            "OR j.region LIKE :keyword OR j.position LIKE :keyword OR CAST(j.reward AS string) LIKE :keyword")
     List<JobPosting> findJobPostingsByKeyword(@Param("keyword") String keyword);
 
     @Query("SELECT j.id FROM JobPosting j " +
